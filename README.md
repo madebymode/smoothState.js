@@ -44,7 +44,7 @@ If you need a little help implementing smoothState there are a couple things you
 
 1. Post on stackoverflow using the [smoothState.js tag](http://stackoverflow.com/tags/smoothState.js).
 2. Join the [Gitter room](https://gitter.im/miguel-perez/smoothState.js?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) and talk to some of the contributors.
-3. Contact [Miguel](https://github.com/miguel-perez) directly, he provides pair-programing help billed by the hour 
+3. Contact [Miguel](https://github.com/miguel-perez) directly, he provides pair-programing help billed by the hour
 
 Please **avoid creating a Github issue** with personal support requests, to keep the tracker clear for bugs and pull requests.
 
@@ -113,7 +113,7 @@ $(function(){
     cacheLength: 2,
     onStart: {
       duration: 250, // Duration of our animation
-      render: function ($container) {
+      render: function ($container, params) {
         // Add your CSS animation reversing class
         $container.addClass('is-exiting');
 
@@ -330,7 +330,7 @@ $('#main').smoothState({
     // How long this animation takes
     duration: 0,
     // A function that dictates the animations that take place
-    render: function ($container) {}
+    render: function ($container, params) {}
   }
 });
 ```
