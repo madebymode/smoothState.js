@@ -488,7 +488,7 @@
               if (options.scroll) {
                 repositionWindow();
               }
-              
+
               bindPrefetchHandlers($container);
 
             });
@@ -618,7 +618,7 @@
           }
 
           // Run the onStart callback and set trigger
-          options.onStart.render($container);
+          options.onStart.render($container, { request: settings, });
 
           window.setTimeout(function(){
             if (options.scroll) {
@@ -734,18 +734,18 @@
         setRateLimitRepeatTime = function () {
           rateLimitRepeatTime = parseInt(Date.now()) + parseInt(options.repeatDelay);
         },
-        
+
         /**
          * Binds prefetch events
          * @param   {object}    event
          */
         bindPrefetchHandlers = function ($element) {
-            		
+
           if (options.anchors && options.prefetch) {
             $element.find(options.anchors).not(options.prefetchBlacklist).on(options.prefetchOn, null, hoverAnchor);
           }
         },
-		
+
         /**
          * Binds all events and inits functionality
          * @param   {object}    event
