@@ -10,7 +10,7 @@
 (function (factory) {
   'use strict';
 
-  if(typeof module === 'object' && typeof module.exports === 'object') {
+  if(typeof module === 'object' && typeof module.exports === 'object' && typeof jQuery === 'undefined') {
     factory(require('jquery'), window, document);
   } else {
     factory(jQuery, window, document);
