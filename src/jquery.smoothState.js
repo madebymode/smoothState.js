@@ -327,6 +327,11 @@
     /** Handles the popstate event, like when the user hits 'back' */
     onPopState = function ( e ) {
       if(e.state !== null) {
+
+        if (e.state.handler && e.state.handler != 'smoothState') {
+          return;
+        }
+
         var url = window.location.href,
           $page = $('#' + e.state.id),
           page = $page.data('smoothState'),
@@ -556,7 +561,7 @@
                   var destUrl = cache[settings.url].destUrl;
 
                   /** Prepare a history entry */
-                  state = options.alterChangeState({ id: elementId }, cache[settings.url].title, destUrl);
+                  state = options.alterChangeState({ id: elementId, handler: 'smoothState' }, cache[settings.url].title, destUrl);
 
                   /** Update the cache to include the history entry for future comparisons */
                   cache[settings.url].state = state;
